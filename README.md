@@ -16,6 +16,17 @@ git config --global user.email
 git config --global user.name  'yourGithubUsername'
 git config --global user.email 'yourGithubEmail@gmail.com'
 
+git config http.sslVerify 
+git config --global http.sslVerify 
+git remote –v
+
+### if below is true , then git commit will do conversion(from windows to unix) of line endings of file being committed. If false it will not. In windows machine it is suggested to be set to true. In Mac false.
+git config --global core.autocrlf       
+git config core.autocrlf
+
+### you can set it to true globally as
+git config --global core.autocrlf true
+
 ## Create a project dir
 mkdir -p /c/fdu/csci3444/projects/ex0_git_commands
 cd /c/fdu/csci3444/projects/ex0_git_commands
