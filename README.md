@@ -60,4 +60,12 @@ git rm --cached README.md
 ## To add all files from working dir to staging
 git add .
 
-Added THIS line
+## To create branch
+git branch hello
+
+## To switch to a branch
+git checkout hello
+git checkout masterOA
+
+## To see branches and the active one (the one with * next to it)
+git branch
