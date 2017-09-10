@@ -71,6 +71,14 @@ git rm --cached README.md
 ## To add all files from working dir to staging
 git add .
 
+## To commit staged files to local repository
+git commit -m 'initial commit' README.md
+
+## To re-add to staging and commit to local repo in 1 step of ALL files that were added to staging before they were modified again
+echo 'deleteMe' >> README.md
+unix2dos README.txt
+git commit -a -m 'commit after dummy edit'
+
 ## To create branch
 git branch hello
 
@@ -80,3 +88,4 @@ git checkout masterOA
 
 ## To see branches and the active one (the one with * next to it)
 git branch
+
