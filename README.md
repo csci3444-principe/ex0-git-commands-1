@@ -9,34 +9,38 @@ git --version
 git config --list
 
 ### To see specific global git config setting like user.name , user.email
-git config --global user.name
+git config --global user.name <br>
 git config --global user.email
 
 ### To set user.name , user.email  global config setting (NOT needed if it had been set before, viewed above)
+<pre>
 git config --global user.name  'yourGithubUsername'
 git config --global user.email 'yourGithubEmail@gmail.com'
 
 git config http.sslVerify 
 git config --global http.sslVerify 
 git remote –v
+</pre>
 
 ### if below is true , then git commit will do conversion(from windows to unix) of line endings of file being committed. If false it will not. In windows machine it is suggested to be set to true. In Mac false.
-git config --global core.autocrlf       
+git config --global core.autocrlf  <br>
 git config core.autocrlf
 
 ### you can set it to true globally as
 git config --global core.autocrlf true
 
 ## Create a project dir
+<pre>
 mkdir -p /c/fdu/csci3444/projects/ex0_git_commands
 cd /c/fdu/csci3444/projects/ex0_git_commands
 ls -a
-
+</pre>
 ## Create local git repo at the project's home directory
-git init
+git init   <br>
 ls -a
 
 ## Create some files and dir
+<pre>
 touch index.html
 touch style.css
 touch script.js
@@ -44,6 +48,7 @@ touch README.md
 touch letGitIgnoreMe.txt
 mkdir target
 touch target/someDumFile.txt
+</pre>
 
 ## see what git thinks about these files and dir (NOTE git sees all files and dirs as "Untracked files" displayed in red)
 git status
@@ -75,15 +80,17 @@ git add .
 git commit -m 'initial commit' README.md
 
 ## To re-add to staging and commit to local repo in 1 step of ALL files that were added to staging before they were modified again
+<pre>
 echo 'deleteMe' >> README.md
 unix2dos README.txt
 git commit -a -m 'commit after dummy edit'
+</pre>
 
 ## To create branch
 git branch hello
 
 ## To switch to a branch
-git checkout hello
+git checkout hello     <br>
 git checkout masterOA
 
 ## To see branches and the active one (the one with * next to it)
@@ -93,12 +100,14 @@ git branch
 git checkout -b fix123Branch
 
 ## Make some changes in branch and commit them to branch
+<pre>
 echo 'h1 { color:red;}' >> style.css; unix2dos style.css
 git add style.css
 git commit -m 'added h1 element style' style.css
+</pre>
 
 ## To switch to master branch and merge changes from another branch to master
-git checkout master
+git checkout master <br>
 git merge fix123Branch
 
 ## To delete branch
