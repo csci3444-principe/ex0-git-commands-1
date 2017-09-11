@@ -89,3 +89,27 @@ git checkout masterOA
 ## To see branches and the active one (the one with * next to it)
 git branch
 
+## To create a branch and switch to that branch together
+git checkout -b fix123Branch
+
+## Make some changes in branch and commit them to branch
+echo 'h1 { color:red;}' >> style.css; unix2dos style.css
+git add style.css
+git commit -m 'added h1 element style' style.css
+
+## To switch to master branch and merge changes from another branch to master
+git checkout master
+git merge fix123Branch
+
+## To delete branch
+git branch -d fix123Branch
+
+## To see remote repository settings
+git remote -v
+
+## To set remote repository to a github repo
+git remote add origin https://github.com/fdu-csci3444/ex0-git-commands.git
+
+## To push to remote repo
+git push -u origin master
+
