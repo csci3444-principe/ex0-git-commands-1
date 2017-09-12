@@ -182,8 +182,8 @@ git push origin -d v0.1.1
 
 ## To clone a remote repo (preferably a forked remote repo if you dont' own remote repo)
 <pre>
-git clone <urlCopiedFromGitHub>
-git clone <urlCopiedFromGitHub>  <localDirNameYouWant>
+git clone urlCopiedFromGitHub
+git clone urlCopiedFromGitHub  localDirNameYouWant
 </pre>
 
 ## To fetch from a remote remoteBranch (NOTE fetch does not update working tree, you need to merge for that)
