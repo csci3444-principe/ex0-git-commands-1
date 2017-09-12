@@ -105,6 +105,9 @@ git checkout masterOA
 ## To see branches and the active one (the one with * next to it)
 git branch
 
+## To see all(local and remote tracking) branches and the active one (the one with * next to it)
+git branch -a
+
 ## To create a branch and switch to that branch together
 git checkout -b fix123Branch
 
@@ -122,8 +125,36 @@ git merge fix123Branch
 ## To delete branch
 git branch -d fix123Branch
 
-## To create a tag
+## To create a tag ( a light weight tag)
 git tag V0.1 
+
+## To create annotated tag ( a heavy weight tag, that is in the graph, that stores by who and when tag happened)
+git tag -a -m 'v0.1 release' V0.1 
+
+## NOTE light weight tag is like book marker, heavy weight tag is like marking book with a highlighter
+
+## To see list of tags
+git tag   <br>
+git tag -l
+
+## To switch to a tag
+git checkout V0.1
+
+## To delete tag
+git tag -d v0.1.1
+
+## To delete remote tag
+git push origin -d v0.1.1
+
+## To see commits on current branch (master)
+git log
+
+## To see commits in a remote's(like remote origin, or remote paul) branch
+<pre>
+git log origin/master
+git log paul/master
+git log paul/remoteBranch
+</pre>
 
 ## To see remote repository settings
 git remote -v
@@ -140,4 +171,45 @@ git push -u -f origin master
 ## To push a localBranchName as a different remoteBranchName
 git push -u origin localBranchName:remoteBranchName
 
+## To push a tag (like V0.1) to remote
+git push -u origin V0.1
+
+## To push all tags to remote
+git push --tags
+
+## To delete remote tag
+git push origin -d v0.1.1
+
+## To clone a remote repo (preferably a forked remote repo if you dont' own remote repo)
+<pre>
+git clone <urlCopiedFromGitHub>
+git clone <urlCopiedFromGitHub>  <localDirNameYouWant>
+</pre>
+
+## To fetch from a remote remoteBranch (NOTE fetch does not update working tree, you need to merge for that)
+<pre>
+git checkout localBranch
+git fetch origin remoteBranch
+git branch -a
+</pre>
+
+## NOTE just "git fetch" will act on "origin", if you want it to work on another remote, you need to specify it
+<pre>
+git fetch
+git branch -a
+git remote add paul https://github.com/csci3444-paul/ex0-git-commands.git
+git branch -a
+git log paul/master
+git fetch paul/master
+</pre>
+
+## To fetch from a remote and merge.(NOTE fetch does not update working tree, merge does that)
+<pre>
+git fetch origin/master
+git merge origin/master
+</pre>
+
+
+## To pull (fetch + merge)
+git pull origin remoteBranch
 
