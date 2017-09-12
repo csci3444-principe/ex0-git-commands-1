@@ -86,6 +86,15 @@ unix2dos README.txt
 git commit -a -m 'commit after dummy edit'
 </pre>
 
+## To see difference between working tree and staging(index)
+git diff
+
+## To see difference between staging(index) and (local)repo
+git diff --cached
+
+## To see difference between working tree and repo
+git diff HEAD
+
 ## To create branch
 git branch hello
 
@@ -113,12 +122,22 @@ git merge fix123Branch
 ## To delete branch
 git branch -d fix123Branch
 
+## To create a tag
+git tag V0.1 
+
 ## To see remote repository settings
 git remote -v
 
 ## To set remote repository to a github repo
 git remote add origin https://github.com/fdu-csci3444/ex0-git-commands.git
 
-## To push to remote repo
+## To push to remote repo (NOTE -u is --set-upstream , which sets current branch as the remote tracking branch of the branch you are pushing)
 git push -u origin master
+
+## To push and overwrite (-f --force) differences in remote (for example let's say remote repo was created with a default README.md in github)
+git push -u -f origin master
+
+## To push a localBranchName as a different remoteBranchName
+git push -u origin localBranchName:remoteBranchName
+
 
